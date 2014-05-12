@@ -33,7 +33,7 @@ Altera-Test-System v.1.0.2
 
 ==================
 Код в шапке сайта
-
+```PHP+HTML
 <?php if ( array_key_exists('altera-test-system', $_COOKIE) && ($_COOKIE['altera-test-system'] == 'true')): ?>
 	<style>
 		#altera-test-system {	
@@ -46,7 +46,7 @@ Altera-Test-System v.1.0.2
 	</style>
 	<div id="altera-test-system" onClick="location='/altera-test-system.html';return false;"></div>
 <?php endif; ?>
-
+```
 ==================
 Функционаял системы:
  - При клилке на иконку в файле происходит смена состояния куки.
@@ -60,22 +60,22 @@ Altera-Test-System v.1.0.2
 
 ==================
 1) PHP
-
+```PHP
 if ( array_key_exists('altera-test-system', $_COOKIE) && ($_COOKIE['altera-test-system'] == 'true')) {
 	//новый функционал
 } else {
 	//старый функционал
 }
-
+```
 ==================
 2) Smarty  
-
+```Smarty
 {if $smarty.cookies.altera-test-system eq 'true'}
 	<!-- новый функционал -->
 {else}
 	<!-- старый функционал -->
 {/if}
-
+```
 ==================
 3) JS
 
@@ -83,7 +83,7 @@ if ( array_key_exists('altera-test-system', $_COOKIE) && ($_COOKIE['altera-test-
 если же мы немного меняем логику скрипта, то возможны варианты:
 
 Объявляем функцию:
-
+```JavaScript
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
         var c_start = document.cookie.indexOf(c_name + "=");
@@ -98,26 +98,26 @@ function getCookie(c_name) {
     }
     return "";
 }
-
+```
 
 Используем её:
-
+```JavaScript
 if (getCookie('altera-test-system') == 'true') {
 	//новый функционал
 } else {
 	//старый функционал
 }
-
+```
 
 ==================
 4) JS (jQuery)  
 
 Вариант попроще (наличие jQuery обязательно):
 Подключаем пагин куки к jQuery: https://github.com/carhartl/jquery-cookie
-
+```JavaScript
 if ($.cookie('altera-test-system') == 'true') {
 	//новый функционал
 } else {
 	//старый функционал
 }
-
+```
