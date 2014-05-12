@@ -33,7 +33,7 @@ Altera-Test-System v.1.0.2
 
 ==================
 Код в шапке сайта
-```PHP
+```HTML+PHP
 <?php if ( array_key_exists('altera-test-system', $_COOKIE) && ($_COOKIE['altera-test-system'] == 'true')): ?>
 	<style>
 		#altera-test-system {	
